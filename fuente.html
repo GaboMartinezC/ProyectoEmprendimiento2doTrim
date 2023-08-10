@@ -4,8 +4,75 @@
             <div class="col-4 offset-4">
                 <h1 class="title">Gestion de las <br> Fuentes de Poder <br> del catálogo</h1>
             </div>
-            <hr>
+            <br class="p-5">
             <div class="col-4"></div>
+            <div class="col-8 offset-2">
+                <table class="table ">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">SATA</th>
+                            <th scope="col">PCIe</th>
+                            <th scope="col">Potencia (W)</th>
+                            <th scope="col">Altura (Cm)</th>
+                            <th scope="col">Anchura (Cm)</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-12 offset-md-4 col-md-4 text-center">
+                <button class="btn btn-outline-ligth" onclick="AbrirModal('modalGuardadoFuente');">
+                    <span>Añadir &plus;</span>
+                </button>
+            </div>
+            <div class="col-sm-4"></div>
         </div>
     </article>
+    <!--Modal de Guardado-->
+    <div id="modalGuardadoFuente" class="miModal">
+        <div class="contenidoModal">
+            <button class="btn" onclick="CerrarElemento('modalGuardadoFuente');">
+                <span style="color: black;">&times;</span>
+            </button>
+            <!--Contenido del modal-->
+            <div class="row">
+                <div class="col-md-12 p-3">
+                    <input asp-for="Descripcion" class="form-control bg-light" type="text" placeholder="Descripcion">
+                </div>
+                <div class="col-md-12 p-3">
+                    <input asp-for="Potencia" class="form-control bg-light" type="text" placeholder="Potencia (W)" onkeypress="SoloNumeros(event)">
+                </div>
+                <div class="col-md-12 p-2 text-center">
+                    <label>Cantidad de Puertos:</label>
+                </div>
+                <div class="col-md-4 offset-md-2 col-sm-12 p-3">
+                    <input asp-for="CantidadConectoresSATA" id="sata" class="form-control bg-light" type="number" placeholder="SATA" onkeypress="SoloNumeros(event)">
+                </div>
+                <div class="col-md-4 col-sm-12 p-3">
+                    <input asp-for="CantidadConectoresPCIe" id="pcie" class="form-control bg-light" type="number" placeholder="PCIe" onkeypress="SoloNumeros(event)">
+                </div>
+                <div class="col-md-12 col-sm-0 p-2 text-center">
+                    <label>Medidas:</label>
+                </div>
+                <div class="col-md-4 offset-md-2 col-sm-12 p-3">
+                    <input asp-for="Altura" class="form-control bg-light" type="text" placeholder="Altura (Cm)" onkeypress="SoloNumeros(event)">
+                </div>
+                <div class="col-md-4 col-sm-12 p-3">
+                    <input asp-for="Ancho" class="form-control bg-light" type="text" placeholder="Anchura (Cm)" onkeypress="SoloNumeros(event)">
+                </div>
+                <div class="col-md-4 offset-md-4 col-sm-12 p-2 text-center">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <span>Guardar &plus;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

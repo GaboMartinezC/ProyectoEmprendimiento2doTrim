@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/Navegacion.js"></script>
+    <script src="js/RenderizarContenido.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -15,25 +16,24 @@
         <header class="row p-5">
             <hr>
             <div class="col-12 col-sm-12 col-md-2">
-                <img src="https://mtzcmrngcloud.000webhostapp.com/img/logo.png" width="75px" height="75px"/>
+                <img src="assets/logo.png" width="100px" height="100px"/>
             </div>
-            <div class="col-12 col-md-1 p-3 opciones" onclick="AbrirModulo();">
+            <div class="col-12 col-md-1 p-3 opciones" onclick="AbrirModulo('homeMod');">
                 <p>Home</p>
             </div>
-            <div class="col-12 col-md-1 p-3 opciones">
+            <div class="col-12 col-md-1 p-3 opciones" onclick="AbrirModulo('ramMod');">
                 <p>RAM</p>
             </div>
-            <div class="col-12 col-md-1 p-3 opciones">
+            <div class="col-12 col-md-1 p-3 opciones" onclick="AbrirModulo('almacenamientoMod');">
                 <p>Almacenamiento</p>
             </div>
-            <div class="col-12 col-md-2 offset-md-1 p-3 opciones">
+            <div class="col-12 col-md-2 offset-md-1 p-3 opciones" onclick="AbrirModulo('fuenteMod');">
                 <p>Fuente Poder</p>
             </div>
             <div class="col-md-4"></div><hr>
         </header>
         <section>
             <div id="contenido"></div>
-            <script src="js/RenderizarContenido.js"></script>
         </section>
         <footer class="text-center">
             <p>&copy; 2023 - Shiba Gaming Store - Setup Assistant</p>

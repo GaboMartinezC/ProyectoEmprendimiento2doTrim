@@ -1,6 +1,6 @@
 function fetchAndShowFile(fileName) {
     return fetch(fileName)
-        .then(response => response.text()) // Obtener el contenido como texto
+        .then(response => response.text())
         .catch(error => console.error('Error:', error));
 }
 Promise.all([
@@ -10,6 +10,5 @@ Promise.all([
     fetchAndShowFile('fuente.html')
 ])
 .then(contents => {
-    // Mostrar los contenidos en el elemento con el id "contenido"
     document.getElementById('contenido').innerHTML = contents.join('');
 });

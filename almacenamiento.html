@@ -7,8 +7,86 @@
                     del catálogo
                 </h1>
             </div>
-            <hr>
+            <br class="p-5">
             <div class="col-4"></div>
+            <div class="col-8 offset-2">
+                <table class="table ">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Capacidad (Gb)</th>
+                            <th scope="col">Consumo (W)</th>
+                            <th scope="col">M.2</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-12 offset-md-4 col-md-4 text-center">
+                <button class="btn btn-outline-ligth" onclick="AbrirModal('modalGuardadoAlm');">
+                    <span>Añadir &plus;</span>
+                </button>
+            </div>
+            <div class="col-sm-4"></div>
         </div>
     </article>
+    <div id="modalGuardadoAlm" class="miModal">
+        <div class="contenidoModal">
+            <button class="btn" onclick="CerrarElemento('modalGuardadoAlm');">
+                <span style="color: black;">&times;</span>
+            </button>
+            <!--Contenido del modal-->
+            <div class="row">
+                <div class="col-12 p-3">
+                    <input asp-for="Descripcion" class="form-control bg-light" type="text" placeholder="Descripcion">
+                </div>
+                <div class="col-12 p-3">
+                    <input asp-for="ConsumoEnergia" class="form-control bg-light" type="text" placeholder="Consumo (W)" onkeypress="SoloNumeros(event);">
+                </div>
+                <div class="col-md-4 offset-md-2 col-sm-12 p-4">
+                    <label for="">Es m.2:</label>
+                    <input class="form-check-input bg-light" type="checkbox" value="" asp-for="M2">
+                </div>
+                <div class="col-md-4 col-sm-12 p-2">
+                    <input asp-for="Capacidad" class="form-control bg-light" type="text" placeholder="Capacidad (Gb)" onkeypress="SoloNumeros(event);">
+                </div>
+                <div class="col-md-4 offset-md-4 col-sm-12 p-2 text-center">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <span>Guardar &plus;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal de Borrado-->
+    <div id="modalConfirmarBorradoAlm" class="miModal">
+        <div class="contenidoModal">
+            <button class="btn" onclick="CerrarElemento('modalConfirmarBorradoAlm');">
+                <span style="color: black;">&times;</span>
+            </button>
+            <!--Contenido del modal-->
+            <div class="row">
+                <div class="col-md-4 offset-md-4 col-sm-12">
+                    <span>¿Seguro de eliminar este elemento del Catálogo?</span>
+                </div>
+                <div class="col-md-8"></div>
+                <div class="col-md-4 offset-md-2 col-sm-12 p-2 text-center">
+                    <button class="btn btn-danger" onclick="CerrarElemento('modalConfirmarBorradoAlm');">
+                        <span>Sí</span>
+                    </button>
+                </div>
+                <div class="col-md-4 col-sm-12 p-2 text-center">
+                    <button class="btn btn-primary" onclick="CerrarElemento('modalConfirmarBorradoAlm');">
+                        <span>No</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
