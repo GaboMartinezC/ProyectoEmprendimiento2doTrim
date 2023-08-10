@@ -1,0 +1,113 @@
+<div class="contenedorModulo" id="ramMod">
+    <article class="container">
+        <div class="row">
+            <div class="col-4 offset-4">
+                <h1 class="title">Gestion de las <br> RAM del catálogo</h1>
+            </div>
+            <hr>
+            <div class="col-4"></div>
+            <div class="col-8 offset-2">
+                <table class="table ">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">DDR</th>
+                            <th scope="col">Capacidad (Gb)</th>
+                            <th scope="col">Consumo (W)</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-12 offset-md-4 col-md-4 text-center">
+                <button class="btn btn-outline-ligth" onclick="AbrirModal('modalGuardado');">
+                    <span>Añadir &plus;</span>
+                </button>
+            </div>
+            <div class="col-sm-4"></div>
+            <div></div>
+        </div>
+    </article>
+    <!--Modal de Guardado-->
+    <div id="modalGuardado" class="miModal">
+        <div class="contenidoModal">
+            <button class="btn" onclick="CerrarElemento('modalGuardado');">
+                <span style="color: black;">&times;</span>
+            </button>
+            <!--Contenido del modal-->
+            <div class="row">
+                <div class="col-4 offset-4">
+                    <h1 class="title">Guardar</h1>
+                </div>
+                <div class="col-4"></div>
+                <div class="col-md-12 p-3">
+                    <input asp-for="Descripcion" class="form-control bg-light" type="text" placeholder="Descripcion">
+                </div>
+                <div class="col-md-12 p-3">
+                    <input asp-for="ConsumoEnergia" id="txtConsumo" class="form-control bg-light" type="text" placeholder="Consumo (W)" onkeypress="SoloNumeros(event)">
+                </div>
+                <div class="col-md-4 offset-md-2 col-sm-12 p-2">
+                    <label for="">DDR:</label>
+                    <select asp-for="VersionDDR" class="form-control bg-light">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="col-md-4 col-sm-12 p-2">
+                    <label for="">Capacidad (Gb):</label>
+                    <select class="form-control bg-light" asp-for="Capacidad">
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                        <option value="12">12</option>
+                        <option value="16">16</option>
+                        <option value="32">32</option>
+                        <option value="64">64</option>
+                        <option value="128">128</option>
+                    </select>
+                </div>
+                <div class="col-md-4 offset-md-4 col-sm-12 p-2 text-center">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <span>Guardar &plus;</span>
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal de Borrado-->
+    <div id="modalConfirmarBorrado" class="miModal">
+        <div class="contenidoModal">
+            <button class="btn" onclick="CerrarElemento('modalConfirmarBorrado');">
+                <span style="color: black;">&times;</span>
+            </button>
+            <!--Contenido del modal-->
+            <div class="row">
+                <div class="col-md-4 offset-md-4 col-sm-12">
+                    <span>¿Seguro de eliminar este elemento del Catálogo?</span>
+                </div>
+                <div class="col-md-8"></div>
+                <div class="col-md-4 offset-md-2 col-sm-12 p-2 text-center">
+                    <button class="btn btn-danger" onclick="CerrarElemento('modalConfirmarBorrado');">
+                        <span>Sí</span>
+                    </button>
+                </div>
+                <div class="col-md-4 col-sm-12 p-2 text-center">
+                    <button class="btn btn-primary" onclick="CerrarElemento('modalConfirmarBorrado');">
+                        <span>No</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+.miModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.contenidoModal{
+    background-color: rgb(255, 255, 255);
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+}
+.contenedorModulo{
+    display: none;
+}
+.miModal span, .miModal label, option, select, .miModal h1{
+    color: black;
+}
+footer{
+    margin-top: 25%;
+}
